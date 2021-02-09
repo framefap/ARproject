@@ -23,6 +23,8 @@ public class MouseInput : MonoBehaviour
 
             Panel.SetActive(!isActive);
             CurrentPanel.SetActive(!isNewActive);
+
+            //testGitHUB 001
         }
     }
 }

@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 guid: 8ef36dc6c0b9c954dbcd2aeb8415bf00
+=======
+guid: ccd9f9364bd351847953a311937c311a
+>>>>>>> Stashed changes
 =======
 guid: ccd9f9364bd351847953a311937c311a
 >>>>>>> Stashed changes
@@ -46,8 +50,13 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   spriteExtrude: 1
   spriteMeshType: 1
+=======
+  spriteExtrude: 0
+  spriteMeshType: 0
+>>>>>>> Stashed changes
 =======
   spriteExtrude: 0
   spriteMeshType: 0
@@ -57,7 +66,11 @@ TextureImporter:
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   spriteGenerateFallbackPhysicsShape: 1
+=======
+  spriteGenerateFallbackPhysicsShape: 0
+>>>>>>> Stashed changes
 =======
   spriteGenerateFallbackPhysicsShape: 0
 >>>>>>> Stashed changes

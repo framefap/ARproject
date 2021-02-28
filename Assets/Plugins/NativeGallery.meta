@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/Plugins/NativeGallery.meta
 guid: da0c3ab8af7d284459a88e2e6d7d921a
+=======
+guid: dd6dbc478d450714f9e7161278c61d5e
+>>>>>>> Stashed changes:Assets/Plugins/Android.meta
+=======
+guid: da0c3ab8af7d284459a88e2e6d7d921a
+>>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

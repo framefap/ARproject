@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Assets/StreamingAssets.meta
 guid: 69db28135a7c0a346b1fb58e0261235d
+=======
+guid: dd6dbc478d450714f9e7161278c61d5e
+>>>>>>> Stashed changes:Assets/Plugins/Android.meta
+=======
+guid: 69db28135a7c0a346b1fb58e0261235d
+>>>>>>> Stashed changes
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

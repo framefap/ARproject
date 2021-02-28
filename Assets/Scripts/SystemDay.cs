@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+using System.Globalization;
+>>>>>>> Stashed changes
 =======
 using System.Globalization;
 >>>>>>> Stashed changes
@@ -11,6 +15,10 @@ using UnityEngine.UI;
 public class SystemDay : MonoBehaviour
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    CultureInfo ci = new CultureInfo("en-US");
+>>>>>>> Stashed changes
 =======
     CultureInfo ci = new CultureInfo("en-US");
 >>>>>>> Stashed changes
@@ -19,7 +27,11 @@ public class SystemDay : MonoBehaviour
     void Awake()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         string day = System.DateTime.Now.ToString("d");
+=======
+        string day = System.DateTime.Now.ToString("ddd , dd MMM yy",ci);
+>>>>>>> Stashed changes
 =======
         string day = System.DateTime.Now.ToString("ddd , dd MMM yy",ci);
 >>>>>>> Stashed changes
@@ -31,7 +43,11 @@ public class SystemDay : MonoBehaviour
     void Update()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         string day = System.DateTime.Now.ToString("d");
+=======
+        string day = System.DateTime.Now.ToString("ddd , dd MMM yy", ci);
+>>>>>>> Stashed changes
 =======
         string day = System.DateTime.Now.ToString("ddd , dd MMM yy", ci);
 >>>>>>> Stashed changes

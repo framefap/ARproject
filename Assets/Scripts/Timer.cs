@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+using System.Globalization;
+using TMPro;
+>>>>>>> Stashed changes
 =======
 using System.Globalization;
 using TMPro;
@@ -13,7 +18,11 @@ public class Timer : MonoBehaviour
     public float timeCounter = 0;
     public bool timerIsRunning = false;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public Text timeText;
+=======
+    public TextMeshProUGUI timeText;
+>>>>>>> Stashed changes
 =======
     public TextMeshProUGUI timeText;
 >>>>>>> Stashed changes

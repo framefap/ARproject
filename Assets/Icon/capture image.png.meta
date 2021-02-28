@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-guid: 08965696a0f3e614a901366b310f5c59
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -4666593342222535999
-    second: contact icon_0
-=======
-guid: 6849148fcf2077a468a48b57b170a4ed
+guid: 9b182bd018f7e6547a9b9db64a426ae2
 TextureImporter:
   internalIDToNameTable: []
->>>>>>> Stashed changes
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,16 +40,6 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< Updated upstream
-  spriteMode: 2
-  spriteExtrude: 1
-  spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.46092793, y: 0.51953596}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 7, z: 7, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
-=======
   spriteMode: 1
   spriteExtrude: 0
   spriteMeshType: 0
@@ -67,7 +48,6 @@ TextureImporter:
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
->>>>>>> Stashed changes
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -141,32 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< Updated upstream
-    sprites:
-    - serializedVersion: 2
-      name: contact icon_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 7
-        width: 81
-        height: 81
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c27f95741eec3fb0800000000000000
-      internalID: -4666593342222535999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-=======
     sprites: []
->>>>>>> Stashed changes
     outline: []
     physicsShape: []
     bones: []

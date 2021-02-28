@@ -1,13 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< Updated upstream
+=======
+using System.Globalization;
+using TMPro;
+>>>>>>> Stashed changes
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     public float timeCounter = 0;
     public bool timerIsRunning = false;
+<<<<<<< Updated upstream
     public Text timeText;
+=======
+    public TextMeshProUGUI timeText;
+>>>>>>> Stashed changes
     public Button RecordButton;
     
   

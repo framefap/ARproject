@@ -11,6 +11,9 @@ public class Timer : MonoBehaviour
     public bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
     public Button RecordButton;
+
+    public Sprite NormalIcon;
+    public Sprite DisableIcon;
     
   
     public void TimerStartStop()
@@ -19,6 +22,7 @@ public class Timer : MonoBehaviour
         timerIsRunning = !timerIsRunning ;
         //Time.timeScale = 200;
         RecordButton.interactable = false;
+        RecordButton.GetComponent<Image>().sprite = DisableIcon;
 
     }
    
@@ -29,7 +33,9 @@ public class Timer : MonoBehaviour
         float RecordTime = timeCounter;
         timeCounter = 0;
         Debug.Log(RecordTime);
+    
         RecordButton.interactable = true;
+        RecordButton.GetComponent<Image>().sprite = NormalIcon;
 
     }
 

@@ -5,23 +5,25 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SystemDay : MonoBehaviour
+public class SystemTime : MonoBehaviour
 {
     CultureInfo ci = new CultureInfo("en-US");
-    public TextMeshProUGUI dateText;
+    public TextMeshProUGUI timeText;
+
     // Start is called before the first frame update
     void Awake()
     {
-        string day = System.DateTime.Now.ToString("ddd, dd MMM",ci);
+        string time = System.DateTime.Now.ToString("HH:mm", ci);
 
-        dateText.text = string.Format(day);
+        timeText.text = string.Format(time);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        string day = System.DateTime.Now.ToString("ddd, dd MMM", ci);
-        
-        dateText.text = string.Format(day);
+        string time = System.DateTime.Now.ToString("HH:mm", ci);
+
+        timeText.text = string.Format(time);
     }
 }

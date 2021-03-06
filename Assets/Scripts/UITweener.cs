@@ -7,11 +7,11 @@ using UnityEngine;
 public enum UIAnimationType
 {
     Move,
-    Scale
+    Scale,
+    FadeOut
 }
 public class UITweener : MonoBehaviour
 {
-    // Start is called before the first frame update
     public UIAnimationType animationType;
     public LeanTweenType easeType;
 
@@ -22,8 +22,12 @@ public class UITweener : MonoBehaviour
 
     private LTDescr _tweenObject;
 
+    bool checkDisable;
+    
+
     public void OnEnable()
     {
+        checkDisable = false;
         Show();
 
         /*LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.4f).setEase(easeType);
@@ -32,6 +36,12 @@ public class UITweener : MonoBehaviour
 
     public void Show()
     {
+        if (gameObject.GetComponent<CanvasGroup>() == null)
+        {
+            gameObject.AddComponent<CanvasGroup>();
+        }
+
+        gameObject.GetComponent<CanvasGroup>().alpha = 1;
         HandleTween();
     }
 
@@ -46,6 +56,8 @@ public class UITweener : MonoBehaviour
             case UIAnimationType.Scale:
                 Scale();
                 break;
+           
+            
 
 
         }
@@ -53,18 +65,36 @@ public class UITweener : MonoBehaviour
         _tweenObject.setEase(easeType);
     }
 
+         public void MoveAbsolute()
+    {
+        if (checkDisable)
+        {
+            gameObject.GetComponent<RectTransform>().anchoredPosition = to;
+            _tweenObject = LeanTween.move(gameObject.GetComponent<RectTransform>(), from, animationDuration);
+            Debug.Log("about to Move");
+            
+            StartCoroutine(Hide());
+
+        }
+
+        else
+        {
+            gameObject.GetComponent<RectTransform>().anchoredPosition = from;
+            _tweenObject = LeanTween.move(gameObject.GetComponent<RectTransform>(), to, animationDuration);
+        }
+
+    }
+
     public void Scale()
     {
+        gameObject.GetComponent<RectTransform>().localScale = from;
         _tweenObject = LeanTween.scale(gameObject, to, animationDuration);
     }
 
-    public void MoveAbsolute()
+    IEnumerator Hide()
     {
-        gameObject.GetComponent<RectTransform>().anchoredPosition = from;
-
-        _tweenObject = LeanTween.move(gameObject.GetComponent<RectTransform>(), to, animationDuration);
-
-
+        yield return new WaitForSeconds(animationDuration);
+        gameObject.SetActive(false);
     }
 }
 

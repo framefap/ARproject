@@ -6,6 +6,7 @@ public class MoveInWhenFlash : MonoBehaviour
 {
     public Animator Flashscreen;
     public GameObject ScreenshotPanel;
+    float animationDuration;
 
     void Update()
     {
@@ -13,9 +14,20 @@ public class MoveInWhenFlash : MonoBehaviour
         {  //If normalizedTime is 0 to 1 means animation is playing, if greater than 1 means finished
 
             //do something
-            Debug.Log("Has flash");
+            //Debug.Log("Has flash");
             gameObject.GetComponent<UITweener>().enabled = true;
+
+            StartCoroutine(Hide());
         }
+
+
+        IEnumerator Hide()
+        {
+            yield return new WaitForSeconds(2);
+            gameObject.GetComponent<FadeOut>().fadeOut();
+        }
+
+
     }
 
    

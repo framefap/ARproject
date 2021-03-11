@@ -7,35 +7,57 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float timeCounter = 0;
-    public bool timerIsRunning = false;
+    float timeCounter = 0;
+    bool timerIsRunning = false;
     public TextMeshProUGUI timeText;
     public Button RecordButton;
 
     public Sprite NormalIcon;
-    public Sprite DisableIcon;
+    public Sprite ClickedIcon;
+
+    public GameObject RecordPanel;
     
   
     public void TimerStartStop()
     {
 
+        //Start Stop ในปุ่มเดียว (ปุ่ม Record Button)
+
+        //Timer Start
         timerIsRunning = !timerIsRunning ;
         //Time.timeScale = 200;
-        RecordButton.interactable = false;
-        RecordButton.GetComponent<Image>().sprite = DisableIcon;
+        //RecordButton.interactable = false;
+        RecordButton.GetComponent<Image>().sprite = ClickedIcon;
+
+        //Timer Stop
+        if (timerIsRunning == false)
+        {
+            float RecordTime = timeCounter;
+            timeCounter = 0;
+            Debug.Log(RecordTime);
+
+            //RecordButton.interactable = true;
+            RecordButton.GetComponent<Image>().sprite = NormalIcon;
+            RecordPanel.SetActive(false);
+            GameObject.Find("RecordingFrame").SetActive(false);
+
+        }
+
 
     }
    
     public void TimerEnd()
     {
-
         timerIsRunning = false;
         float RecordTime = timeCounter;
         timeCounter = 0;
         Debug.Log(RecordTime);
-    
-        RecordButton.interactable = true;
+
+        //RecordButton.interactable = true;
         RecordButton.GetComponent<Image>().sprite = NormalIcon;
+
+        
+        
 
     }
 

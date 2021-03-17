@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class FadeOut : MonoBehaviour
 {
+
     private LTDescr _tweenObject;
-    public float Fadetime = 0.3f;
-   
+    public float FadeAnimationDuration = 0.3f;
 
     public void fadeOut()
     {
@@ -15,14 +15,14 @@ public class FadeOut : MonoBehaviour
         {
             gameObject.AddComponent<CanvasGroup>();
         }
-
-        _tweenObject = LeanTween.alphaCanvas(gameObject.GetComponent<CanvasGroup>(), 0, Fadetime);
+        
+        _tweenObject = LeanTween.alphaCanvas(gameObject.GetComponent<CanvasGroup>(), 0, FadeAnimationDuration);
         StartCoroutine(Hide());
-       
+        
     }
     IEnumerator Hide()
     {
-        yield return new WaitForSeconds(Fadetime);
+        yield return new WaitForSeconds(FadeAnimationDuration);
         gameObject.SetActive(false);
     }
 

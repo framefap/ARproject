@@ -65,7 +65,7 @@ public class UITweener : MonoBehaviour
         _tweenObject.setEase(easeType);
     }
 
-         public void MoveAbsolute()
+    public void MoveAbsolute()
     {
         if (checkDisable)
         {

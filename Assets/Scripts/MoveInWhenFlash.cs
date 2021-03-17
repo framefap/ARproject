@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoveInWhenFlash : MonoBehaviour
 {
@@ -20,15 +21,19 @@ public class MoveInWhenFlash : MonoBehaviour
             StartCoroutine(Hide());
         }
 
-
         IEnumerator Hide()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
             gameObject.GetComponent<FadeOut>().fadeOut();
         }
 
 
     }
 
-   
+    public void StopCoroutine()
+    {
+        StopAllCoroutines();
+    }
+
+
 }

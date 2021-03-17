@@ -10,6 +10,7 @@ public class VisibilityCtrl : MonoBehaviour
     GameObject _myGameObj;
     GameObject _invisibleBG;
 
+
     void Awake()
     {
         setupInvisibleBG();
@@ -61,7 +62,7 @@ public class VisibilityCtrl : MonoBehaviour
 
     IEnumerator Inactive()
     {
-        yield return new WaitForSeconds(2f); // delay 2 วิแล้วfadeout
+        yield return new WaitForSeconds(1.5f); // delay 1.5 วิแล้วfadeout
         _myGameObj.GetComponent<FadeOut>().fadeOut();
         _invisibleBG.SetActive(false);
     }

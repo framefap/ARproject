@@ -9,8 +9,9 @@ public class Timer : MonoBehaviour
 {
     float timeCounter = 0;
     bool timerIsRunning = false;
+
     public TextMeshProUGUI timeText;
-    public Button RecordButton;
+    public Button PausePlayButton;
 
     public Sprite NormalIcon;
     public Sprite ClickedIcon;
@@ -18,16 +19,15 @@ public class Timer : MonoBehaviour
     public GameObject RecordPanel;
     
   
-    public void TimerStartStop()
+    public void TimerStart()
     {
-
-        //Start Stop ในปุ่มเดียว (ปุ่ม Record Button)
 
         //Timer Start
         timerIsRunning = !timerIsRunning ;
+        Debug.Log(timerIsRunning);
         //Time.timeScale = 200;
         //RecordButton.interactable = false;
-        RecordButton.GetComponent<Image>().sprite = ClickedIcon;
+        //RecordButton.GetComponent<Image>().sprite = ClickedIcon;
 
         //Timer Stop
         if (timerIsRunning == false)
@@ -37,13 +37,34 @@ public class Timer : MonoBehaviour
             Debug.Log(RecordTime);
 
             //RecordButton.interactable = true;
-            RecordButton.GetComponent<Image>().sprite = NormalIcon;
+            PausePlayButton.GetComponent<Image>().sprite = NormalIcon;
             RecordPanel.SetActive(false);
             GameObject.Find("RecordingFrame").SetActive(false);
 
         }
 
 
+    }
+
+    public void TogglePausePlay()
+    {
+
+        
+        timerIsRunning = !timerIsRunning;
+        Debug.Log(timerIsRunning);
+
+        if (timerIsRunning == false) //Timer pause
+        {
+            PausePlayButton.GetComponent<Image>().sprite = ClickedIcon;
+
+        }
+        else //Timer play (Start)
+        {
+            
+            PausePlayButton.GetComponent<Image>().sprite = NormalIcon;
+
+        }
+        
     }
    
     public void TimerEnd()
@@ -54,22 +75,20 @@ public class Timer : MonoBehaviour
         Debug.Log(RecordTime);
 
         //RecordButton.interactable = true;
-        RecordButton.GetComponent<Image>().sprite = NormalIcon;
 
-        
-        
 
     }
 
     void Update()
     {
-        if (timerIsRunning)
+        if (timerIsRunning) //Timer Play
         {
              
             timeCounter += Time.deltaTime;
             DisplayTime(timeCounter);
             
         }
+       
     }
 
     void DisplayTime(float timeToDisplay)

@@ -8,6 +8,8 @@ public class SelectedButtonHandler : MonoBehaviour
 
     public List<Button> selectedButtonlist = new List<Button>();
 
+    //public List<GameObject> selectedButtonlist = new List<GameObject>();
+
     private static SelectedButtonHandler instance;
 
     public static SelectedButtonHandler Instance

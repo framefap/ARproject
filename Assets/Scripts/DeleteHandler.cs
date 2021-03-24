@@ -25,7 +25,11 @@ public class DeleteHandler : MonoBehaviour
     {
         for (int i = 0; i < SelectedButtonHandler.Instance.selectedButtonlist.Count; i++)
         {
+            
             SelectedButtonHandler.Instance.selectedButtonlist[i].transform.parent.gameObject.SetActive(false);
+
+            Destroy(SelectedButtonHandler.Instance.selectedButtonlist[i].transform.parent.gameObject);
+            //SelectedButtonHandler.Instance.selectedButtonlist.Clear();
 
         }
 

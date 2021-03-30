@@ -16,7 +16,7 @@ MonoBehaviour:
   - section: Module_InputSystem
     KEY_VALUE:
     - Name: ActiveGGT26Dof
-      Value: 0
+      Value: 1
     - Name: ActiveHead
       Value: 1
     - Name: ActiveBT3Dof
@@ -51,55 +51,23 @@ MonoBehaviour:
       Value: RHallForward
     - Name: K101_Left_CalibrationKeyAlias
       Value: LFunction
-    - Name: K101_Left_CalibrationKeyAlias
+    - Name: K101_Right_CalibrationKeyAlias
+      Value: RFunction
+    - Name: K102_Left_CalibrationKeyAlias
       Value: LFunction
-    - Name: K101_Left_CalibrationKeyAlias
-      Value: LFunction
-    - Name: K101_Left_CalibrationKeyAlias
-      Value: LFunction
-    - Name: K101_Left_CalibrationKeyAlias
-      Value: LFunction
-    - Name: K101_Left_CalibrationKeyAlias
-      Value: LFunction
-    - Name: K101_Left_CalibrationKeyAlias
-      Value: LFunction
-    - Name: K101_Left_CalibrationKeyAlias
-      Value: LFunction
-  - section: Module_InputSystem
+    - Name: K102_Right_CalibrationKeyAlias
+      Value: RFunction
+    - Name: K11_Left_CalibrationKeyAlias
+      Value: DOWN
+    - Name: K11_Right_CalibrationKeyAlias
+      Value: A
+    - Name: ISGCPriorityGGT26Dof
+      Value: 1
+    - Name: ShowDebugLog
+      Value: 0
+  - section: Module_Slam
     KEY_VALUE:
-    - Name: ActiveGGT26Dof
-      Value: 0
-    - Name: ActiveHead
+    - Name: ViewMatrixType
       Value: 1
-    - Name: ActiveBT3Dof
+    - Name: trackPositionScale
       Value: 1
-    - Name: ActiveKS
-      Value: 1
-    - Name: KSMode6Dof
-      Value: 1
-    - Name: UseK102Model
-      Value: 1
-    - Name: GreyHandOffsetX
-      Value: 0
-    - Name: GreyHandOffsetY
-      Value: 0
-    - Name: GreyHandOffsetZ
-      Value: 0
-    - Name: GGT26DofHandDataLerp
-      Value: 1
-    - Name: GGT26DofHandEffectDuration
-      Value: 2
-    - Name: K11_Left_EnterKeyAlias
-      Value: LTrigger
-    - Name: K11_Right_EnterKeyAlias
-      Value: RTrigger
-    - Name: K101_Left_EnterKeyAlias
-      Value: LHallForward
-    - Name: K101_Right_EnterKeyAlias
-      Value: RHallForward
-    - Name: K102_Left_EnterKeyAlias
-      Value: LHallForward
-    - Name: K102_Right_EnterKeyAlias
-      Value: RHallForward
-    - Name: K101_Left_CalibrationKeyAlias
-      Value: LFunction

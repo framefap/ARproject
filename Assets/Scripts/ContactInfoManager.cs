@@ -68,18 +68,18 @@ public class ContactInfoManager : MonoBehaviour
                 language = "Thai, English";
                 break;
 
-            case "Satoshi M.":
+            case "Paisarn L.":
 
-                specialty = "Orthopedics";
-                hospital = "Siam Hospital";
-                language = "Japanese, English";
+                specialty = "Obstetrics and Gynaecology";
+                hospital = "Krungthep Hospital";
+                language = "Thai, English";
                 break;
 
-            case "Charles D.":
+            case "Room 602":
 
-                specialty = "Urological Surgery";
-                hospital = "Positive Hospital";
-                language = "English";
+                specialty = "-";
+                hospital = "-";
+                language = "-";
                 break;
         }
 

@@ -18,7 +18,10 @@ namespace SC.XR.Unity.Module_InputSystem.InputDeviceHand.GGT26Dof {
 
         public override void UpdateTransform()
         {
-
+            if (Application.platform != RuntimePlatform.Android)
+            {
+                base.UpdateTransform();
+            }
         }
 
     }

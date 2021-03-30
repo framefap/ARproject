@@ -90,7 +90,7 @@ namespace SC.XR.Unity.Module_InputSystem.InputDeviceHand.GGT26Dof
         {
             base.OnSCUpdate();
 
-            if (isHandTrackStart)
+            if (isHandTrackStart && Application.platform == RuntimePlatform.Android)
             {
                 ScHANDTRACK_GetGesture(InputDataGGT26Dof.handsInfo.originDataMode, InputDataGGT26Dof.handsInfo.originDataPose);
             }

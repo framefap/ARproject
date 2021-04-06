@@ -157,7 +157,7 @@ public class SvrManager : MonoBehaviour
         public float foveationArea = 0.0f;
         [Tooltip("Foveated render min pixel density [1/16..1]")]
         public float foveationMinimum = 0.25f;
-        [Tooltip("Use perspective of unity camera or device frustum data")]
+        [Tooltip("Use perspective of unity camera or device frustum data")] //ลองปรับอันนี้
         public eFrustumType frustumType = eFrustumType.Camera;
         [Tooltip("Display buffer type (default stereo seperate)")]
         public eEyeBufferType displayType = eEyeBufferType.StereoSeperate;

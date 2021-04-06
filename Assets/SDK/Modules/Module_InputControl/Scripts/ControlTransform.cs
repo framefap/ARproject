@@ -20,7 +20,7 @@ namespace SC.XR.Unity
         void Update()
         {
 
-            if (Application.platform == RuntimePlatform.Android)
+            if (Application.platform == RuntimePlatform.Android) //ตอนเปิดในแว่น
                 return;
 
             if (Input.GetKey(KeyCode.W))

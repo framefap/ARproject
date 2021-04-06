@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.ARFoundation;
+using SC.XR.Unity.Module_InputSystem;
+using SC.XR.Unity.Module_InputSystem.InputDeviceHand;
+using SC.XR.Unity.Module_InputSystem.InputDeviceHead;
+
 
 [RequireComponent(typeof(ARAnchorManager))]
 public class ARDrawManager : Singleton<ARDrawManager>
@@ -23,8 +27,9 @@ public class ARDrawManager : Singleton<ARDrawManager>
     private List<ARAnchor> anchors = new List<ARAnchor>();
 
     private Dictionary<int, ARLine> Lines = new Dictionary<int, ARLine>();
-
     private bool CanDraw { get; set; }
+
+    public Transform farPointerCursor;
 
     private void Start()
     {
@@ -33,6 +38,9 @@ public class ARDrawManager : Singleton<ARDrawManager>
 
     void Update ()
     {
+
+        //****TRY HERE*****
+
         #if !UNITY_EDITOR    
         DrawOnTouch();
         #else
@@ -43,7 +51,6 @@ public class ARDrawManager : Singleton<ARDrawManager>
     public void AllowDraw(bool isAllow)
     {
         CanDraw = isAllow;
-
     }
 
 
@@ -98,9 +105,44 @@ public class ARDrawManager : Singleton<ARDrawManager>
             return;
         }
 
+        
         Vector3 mousePosition = arCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, lineSettings.distanceFromCamera));
 
-        if(Input.GetMouseButton(0))
+        //Vector3 handcursorPosition = arCamera.ScreenToWorldPoint(new Vector3(API_Module_InputSystem_GGT26Dof.GGTLeft.inputDataGGT26Dof.SCPointEventData.HitPointerRelativeRayCasterCamera.x, API_Module_InputSystem_GGT26Dof.GGTLeft.inputDataGGT26Dof.SCPointEventData.HitPointerRelativeRayCasterCamera.y, lineSettings.distanceFromCamera));
+
+        //Vector3 handPosition = new Vector3(API_Module_InputSystem_GGT26Dof.GGTRight.inputDataGGT26Dof.SCPointEventData.Position3D.x, API_Module_InputSystem_GGT26Dof.GGTLeft.inputDataGGT26Dof.SCPointEventData.Position3D.y, lineSettings.distanceFromCamera);
+
+        Vector3 cursorPosition = new Vector3(farPointerCursor.position.x, farPointerCursor.position.y, lineSettings.distanceFromCamera);
+
+        /*if (API_Module_InputSystem_GGT26Dof.IsGGTKeyDown(InputKeyCode.Enter, API_Module_InputSystem_GGT26Dof.GGestureType.Left)){
+           
+            Debug.Log("Left hand grab pen");
+
+            OnDraw?.Invoke();
+
+            if (Lines.Keys.Count == 0)
+            {
+                ARLine line = new ARLine(lineSettings);
+                Lines.Add(0, line);
+                line.AddNewLineRenderer(transform, null, mousePosition);
+            }
+            else
+            {
+                Lines[0].AddPoint(mousePosition);
+                Debug.Log("Long line");
+            }
+            API_Module_InputSystem_GGT26Dof.GGTDragTarget
+
+        }
+
+        else if (API_Module_InputSystem_GGT26Dof.IsGGTKeyUp(InputKeyCode.Enter, API_Module_InputSystem_GGT26Dof.GGestureType.Left))
+        {
+            Debug.Log("Left hand RELEASE");
+
+            Lines.Remove(0);
+        }*/
+
+        if (Input.GetMouseButton(0))
         {
             OnDraw?.Invoke();
 

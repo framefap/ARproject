@@ -22,7 +22,7 @@ namespace SC.XR.Unity.Module_InputSystem.InputDeviceHand {
 
         public Action<bool> TargetDetectModelChange;
 
-
+        //TRY THIS
         protected override void UpdateTransform() {
             transform.position = handDetector.inputDeviceHandPart.inputDeviceHandPartUI.modelHand.ActiveHandModel.GetJointTransform(FINGER.forefinger, JOINT.Four).position;
             transform.rotation = SvrManager.Instance.leftCamera.transform.rotation;

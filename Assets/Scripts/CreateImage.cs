@@ -16,25 +16,28 @@ public class CreateImage : MonoBehaviour
        
         //Create Canvas
         GameObject canvas = createCanvas(false);
+        GameObject canvas2 = GameObject.Find("Canvas AR");
 
         //Create your Image GameObject
         GameObject newObject = new GameObject("ObjectName");
 
         //Make the GameObject child of the Canvas
-        newObject.transform.SetParent(canvas.transform);
+        newObject.transform.SetParent(canvas2.transform);
 
         //Get Sprite
-        newObject.AddComponent<Image>();
+       //newObject.AddComponent<Image>();
 
 
         //Center Image to screen
-        newObject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        //newObject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
 
-        newObject.AddComponent<TrackMouse>();
+        //newObject.AddComponent<TrackMouse>();
+
+        //newObject.transform.position = new Vector3(0, 0, 1);
 
 
-        image = newObject.GetComponent<Image>();
-        image.sprite = filebutton.transform.GetChild(1).GetComponent<Image>().sprite;
+        //image = newObject.GetComponent<Image>();
+        //image.sprite = filebutton.transform.GetChild(1).GetComponent<Image>().sprite;
    
 
        

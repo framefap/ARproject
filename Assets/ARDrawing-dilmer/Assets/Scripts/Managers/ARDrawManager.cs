@@ -41,11 +41,11 @@ public class ARDrawManager : Singleton<ARDrawManager>
 
         //****TRY HERE*****
 
-        #if !UNITY_EDITOR    
-        DrawOnTouch();
-        #else
+       // #if !UNITY_EDITOR    
+       // DrawOnTouch();
+        //#else
         DrawOnMouse();
-        #endif
+       // #endif
 	}
 
     public void AllowDraw(bool isAllow)

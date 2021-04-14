@@ -260,16 +260,6 @@ namespace SC.XR.Unity {
         /// ModuleDestroy ===================================
         /// </summary>
 
-
-
-
-
-
-
-
-
-
-
         public void AddModule(ISCModule Module, bool isEffectGameObject = true, SCModulePriority priority = SCModulePriority.Middle) {
             if(Module == null)
                 return;

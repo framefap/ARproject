@@ -65,7 +65,7 @@ namespace SC.XR.Unity.Module_InputSystem {
 
         //[Header("Enable GreyHand")]
         //[SerializeField]
-        private bool activeGGT26Dof = false;
+        private bool activeGGT26Dof = false; //ตอนแรกเป็น false
 
         public override void OnSCAwake() {
             base.OnSCAwake();
@@ -100,7 +100,7 @@ namespace SC.XR.Unity.Module_InputSystem {
             }
 
             if (API_Module_SDKConfiguration.HasKey("Module_InputSystem", "ActiveGGT26Dof")) {
-                activeGGT26Dof = API_Module_SDKConfiguration.GetBool("Module_InputSystem", "ActiveGGT26Dof", 0);
+                activeGGT26Dof = API_Module_SDKConfiguration.GetBool("Module_InputSystem", "ActiveGGT26Dof", 0); // แก้เป็น 1 เดิมเป็น 0
             }
 
         }

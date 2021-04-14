@@ -20,6 +20,8 @@ public class ARExperienceManager : MonoBehaviour
         arPlaneManager = GetComponent<ARPlaneManager>();
         arPlaneManager.planesChanged += PlanesChanged;
 
+        //OMG !
+
         #if UNITY_EDITOR
             OnInitialized?.Invoke();
             Initialized = true;

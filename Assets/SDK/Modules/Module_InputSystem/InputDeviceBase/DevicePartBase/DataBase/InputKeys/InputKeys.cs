@@ -152,6 +152,16 @@ namespace SC.XR.Unity.Module_InputSystem {
             }
             return false;
         }
+        public bool GetKeyLong(InputKeyCode inputKeyCode) // เพิ่มเอง
+        {
+            InputKeyState inputKeyState;
+            inputKeyPressDic.TryGetValue(inputKeyCode, out inputKeyState);
+            if (inputKeyState == InputKeyState.LONG) // เพิ่ม long
+            {
+                return true;
+            }
+            return false;
+        }
 
         /// <summary>
         /// 获取inputKeyPressDic列表中的某个按键状态

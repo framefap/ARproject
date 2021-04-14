@@ -36,7 +36,7 @@ public class ContactInfoManager : MonoBehaviour
             case "Sorravit A.":
 
                 specialty = "Psychiatry";
-                hospital = "Kalaland Hospital";
+                hospital = "Prachin Hospital";
                 language = "Thai, English";
                 break;
 
@@ -78,7 +78,7 @@ public class ContactInfoManager : MonoBehaviour
             case "Room 602":
 
                 specialty = "-";
-                hospital = "-";
+                hospital = "Prachine Hospital";
                 language = "-";
                 break;
         }

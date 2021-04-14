@@ -46,5 +46,7 @@ public class SelectedButtonManager : MonoBehaviour
 
         button.spriteState = spriteState;
 
+        transform.parent.GetComponent<Button>().interactable = false;
+
     }
 }

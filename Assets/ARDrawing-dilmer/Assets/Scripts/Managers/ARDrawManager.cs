@@ -36,10 +36,13 @@ public class ARDrawManager : Singleton<ARDrawManager>
     public GameObject cursorPress;
 
     public RectTransform drawingReticle;
+    Vector3 reticlePosition;
+
 
     private void Start()
     {
         SetDefaultLineColor();
+
     }
 
     void Update ()
@@ -115,7 +118,7 @@ public class ARDrawManager : Singleton<ARDrawManager>
         Vector3 farpointerPosition = arCamera.ScreenToWorldPoint(new Vector3(farPointerCursor.position.x+800, farPointerCursor.position.y+700, lineSettings.distanceFromCamera));
 
         //*** ตาม DrawingReticle gameobject ***
-        Vector3 reticlePosition = new Vector3(drawingReticle.GetComponent<RectTransform>().localPosition.x, drawingReticle.GetComponent<RectTransform>().localPosition.y, drawingReticle.GetComponent<RectTransform>().localPosition.z);
+        reticlePosition = new Vector3(drawingReticle.GetComponent<RectTransform>().localPosition.x, drawingReticle.GetComponent<RectTransform>().localPosition.y, drawingReticle.GetComponent<RectTransform>().localPosition.z);
 
         //GESTURE
         if (cursorPress.activeSelf)
@@ -148,8 +151,8 @@ public class ARDrawManager : Singleton<ARDrawManager>
 
         }*/
 
-
-        if (IshandGrab)
+        // Draw Code
+        /*if (IshandGrab)
         {
 
             OnDraw?.Invoke();
@@ -172,7 +175,7 @@ public class ARDrawManager : Singleton<ARDrawManager>
         {
 
             Lines.Remove(0);
-        }
+        }*/
         
         /*if (Input.GetMouseButton(0))
         {
@@ -194,6 +197,28 @@ public class ARDrawManager : Singleton<ARDrawManager>
         {
             Lines.Remove(0);   
         }*/
+    }
+    public void DrawOnDrag()
+    {
+        OnDraw?.Invoke();
+
+        if (Lines.Keys.Count == 0)
+        {
+            ARLine line = new ARLine(lineSettings);
+            Lines.Add(0, line);
+            line.AddNewLineRenderer(transform, null, reticlePosition);
+
+            Debug.Log(reticlePosition);
+        }
+        else
+        {
+            Lines[0].AddPoint(reticlePosition);
+        }
+    }
+
+    public void StopDraw()
+    {
+        Lines.Remove(0);
     }
 
     GameObject[] GetAllLinesInScene()
@@ -229,4 +254,6 @@ public class ARDrawManager : Singleton<ARDrawManager>
         lineSettings.startColor = new Color32(207, 61, 95, 255);
         lineSettings.endColor = new Color32(207, 61, 95, 255);
     }
+
+   
 }

@@ -35,6 +35,8 @@ public class ARDrawManager : Singleton<ARDrawManager>
 
     public GameObject cursorPress;
 
+    public DrawTracking dt;
+
     public RectTransform drawingReticle;
     Vector3 reticlePosition;
 
@@ -202,13 +204,15 @@ public class ARDrawManager : Singleton<ARDrawManager>
     {
         OnDraw?.Invoke();
 
+        //dt.Isdrawing = true;
+        
+
         if (Lines.Keys.Count == 0)
         {
             ARLine line = new ARLine(lineSettings);
             Lines.Add(0, line);
             line.AddNewLineRenderer(transform, null, reticlePosition);
 
-            Debug.Log(reticlePosition);
         }
         else
         {
@@ -219,6 +223,8 @@ public class ARDrawManager : Singleton<ARDrawManager>
     public void StopDraw()
     {
         Lines.Remove(0);
+
+        //dt.Isdrawing = false;
     }
 
     GameObject[] GetAllLinesInScene()

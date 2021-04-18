@@ -113,11 +113,11 @@ public class ARDrawManager : Singleton<ARDrawManager>
         //*** ตามหัวเรา ไม่ตาม cursor มือ ***
         Vector3 mousePosition = arCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, lineSettings.distanceFromCamera));
         
-        Vector3 handcursorPosition = arCamera.ScreenToWorldPoint(new Vector3(API_Module_InputSystem_GGT26Dof.GGTRight.inputDataGGT26Dof.SCPointEventData.HitPointerRelativeRayCasterCamera.x, API_Module_InputSystem_GGT26Dof.GGTRight.inputDataGGT26Dof.SCPointEventData.HitPointerRelativeRayCasterCamera.y, lineSettings.distanceFromCamera));
+        //Vector3 handcursorPosition = arCamera.ScreenToWorldPoint(new Vector3(API_Module_InputSystem_GGT26Dof.GGTRight.inputDataGGT26Dof.SCPointEventData.HitPointerRelativeRayCasterCamera.x, API_Module_InputSystem_GGT26Dof.GGTRight.inputDataGGT26Dof.SCPointEventData.HitPointerRelativeRayCasterCamera.y, lineSettings.distanceFromCamera));
         
-        Vector3 handPosition = arCamera.ScreenToWorldPoint(new Vector3(API_Module_InputSystem_GGT26Dof.GGTRight.inputDataGGT26Dof.SCPointEventData.Position3D.x, API_Module_InputSystem_GGT26Dof.GGTRight.inputDataGGT26Dof.SCPointEventData.Position3D.y, lineSettings.distanceFromCamera));
+       // Vector3 handPosition = arCamera.ScreenToWorldPoint(new Vector3(API_Module_InputSystem_GGT26Dof.GGTRight.inputDataGGT26Dof.SCPointEventData.Position3D.x, API_Module_InputSystem_GGT26Dof.GGTRight.inputDataGGT26Dof.SCPointEventData.Position3D.y, lineSettings.distanceFromCamera));
              
-        Vector3 farpointerPosition = arCamera.ScreenToWorldPoint(new Vector3(farPointerCursor.position.x+800, farPointerCursor.position.y+700, lineSettings.distanceFromCamera));
+       // Vector3 farpointerPosition = arCamera.ScreenToWorldPoint(new Vector3(farPointerCursor.position.x+800, farPointerCursor.position.y+700, lineSettings.distanceFromCamera));
 
         //*** ตาม DrawingReticle gameobject ***
         reticlePosition = new Vector3(drawingReticle.GetComponent<RectTransform>().localPosition.x, drawingReticle.GetComponent<RectTransform>().localPosition.y, drawingReticle.GetComponent<RectTransform>().localPosition.z);

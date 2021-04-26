@@ -19,6 +19,9 @@ public class ExpandShrink : MonoBehaviour
         StopButton.SetActive(true);
         LeanTween.move(StopButton.GetComponent<RectTransform>(), new Vector3(620, 0, 0), animationDuration);
 
+        //เลื่อน bottompanel ไปซ้าย หลบปุ่มเลือกสี
+        LeanTween.move(gameObject.GetComponent<RectTransform>(), new Vector3(-30, 20, 0), animationDuration);
+
     }
 
     public void Shrink()
@@ -27,6 +30,9 @@ public class ExpandShrink : MonoBehaviour
 
         LeanTween.move(StopButton.GetComponent<RectTransform>(), new Vector3(480, 0, 0), 0.15f).setEase(LeanTweenType.easeOutQuad);
         StartCoroutine(Hide());
+
+        //เลื่อน bottompanel กลับมาตรงกลาง
+        LeanTween.move(gameObject.GetComponent<RectTransform>(), new Vector3(0, 20, 0), animationDuration);
     }
 
     IEnumerator Hide()

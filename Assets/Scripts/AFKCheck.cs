@@ -5,38 +5,41 @@ using UnityEngine;
 public class AFKCheck : MonoBehaviour
 {
 
-    float AFKTimer;
-    bool IsMenuOn;
+    public float AFKTimer;
+    
     public GameObject Show;
     public GameObject Menu;
     
     // Start is called before the first frame update
     void Start()
     {
-        IsMenuOn = false;
+        AFKTimer = 0;
+       
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IsMenuOn == true)
-        {
+        
             AFKTimer += 1;
-            Debug.Log("SSS");
-            if (AFKTimer > 2)
+            if (AFKTimer > 7200)
             {
                 Debug.Log("hello");
                 Show.SetActive(false);//ShowMenuButton เป็น Active แล้ว MenuButton Inactive
                 Menu.SetActive(true);
-                IsMenuOn = false;
+                
+                AFKTimer = 0;
             }
-        }
+        Debug.Log(AFKTimer);
+      
     }
 
     public void StartTimer()
     {
+        //Debug.Log(AFKTimer);
         AFKTimer = 0;
-        IsMenuOn = true;
-        Debug.Log("hello");
+        
+       // Debug.Log("hello");
     }
 }

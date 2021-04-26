@@ -8,6 +8,7 @@ public class DrawTracking : MonoBehaviour
     public bool Isdrawing;
     public GameObject CursorFocus;
     public GameObject CursorHead;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -65,5 +66,20 @@ public class DrawTracking : MonoBehaviour
                 
         }
     }
+    public void SetZero()
+    {
+        GameObject Tracker = GameObject.Find("DrawTracker");
+        GameObject Drawer = GameObject.Find("DrawingReticle");
+        GameObject SetZero = GameObject.Find("Zero");
+        Drawer.transform.position = SetZero.transform.position;
+        Drawer.transform.rotation = SetZero.transform.rotation;
+        Tracker.transform.position = SetZero.transform.position;
+        Tracker.transform.rotation = SetZero.transform.rotation;
+
+
+
+
+    }
+    
     
 }
